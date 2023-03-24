@@ -1,0 +1,7 @@
+{
+  "name": "lek7-2023",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
