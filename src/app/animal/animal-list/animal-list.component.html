@@ -1,0 +1,13 @@
+<h2 class="card">
+    Список магічних тварин
+</h2>
+<ion-list>
+    <ion-item *ngFor="let animal of animals">
+
+        <ion-label>
+            <h3>Назва: </h3>{{animal.name}}</ion-label>
+
+        <ion-button (click)="showDetails(animal)">Перегляд</ion-button>
+    </ion-item>
+</ion-list>
+<app-animal-detail [animal]="selectedAnimal" (animalChange)="update($event)"></app-animal-detail>

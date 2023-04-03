@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            <ion-icon name="file-tray-full-outline"></ion-icon> Приклад до лекції 7
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card>
+        <ion-card-header>
+            <h1>Декоратор @Input</h1>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+        </ion-card-header>
+        <ion-button expand="block" fill="outline" (click)="changeChild1Data()"> Go
+
+        </ion-button>
+        <ion-card-content>
+            <h2>This is parent component:</h2>
+            <hr>
+            <app-child-example1 [inFromParent]='string1' [sum]="sum" [mul]="don">
+
+            </app-child-example1>
+
+        </ion-card-content>
+    </ion-card>
+
+
 </ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Add task</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-fab vertical="top" horizontal="center" edge slot="fixed" title="Save">
+
+
+        <ion-fab-button title="Save" (click)="save(TaskId.value,TaskName.value,TaskDesc.value)" color="primary">
+            <ion-icon name="add-circle" title="Save"></ion-icon>
+        </ion-fab-button>
+
+
+    </ion-fab>
+    <ion-fab vertical="top" horizontal="end" edge slot="fixed" title="Close">
+        <ion-fab-button (click)="close()" title="Close" color="danger">
+            <ion-icon name="close" title="Close"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <!--
+    <ion-button shape="round" fill="outline" (click)="close()">
+        <ion-icon name="close-outline"></ion-icon>Close</ion-button>
+    <ion-button shape="round" fill="outline" (click)="save(TaskName.value,TaskDesc.value)">
+
+    <ion-icon name="add-circle-outline"></ion-icon>Save</ion-button>
+     -->
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                New Task
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+              <ion-item>
+                    <ion-label position="floating">Id</ion-label>
+                    <ion-input #TaskId></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Title</ion-label>
+                    <ion-input #TaskName></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Description</ion-label>
+                    <ion-input #TaskDesc></ion-input>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content> 

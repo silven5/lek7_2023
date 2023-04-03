@@ -1,17 +1,53 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Приклад до лекції 7
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+        <ion-fab-button (click)="openModal()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <ion-slides>
+        <ion-slide>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+            <ion-list>
+
+                <ion-reorder-group (ionItemReorder)="onRenderItems($event)" disabled="false">
+                    <h1>Backlog</h1>
+
+                    <app-task *ngFor="let task of todo1 " [task]="task" [fb]="fbService" (del)="deleteTask($event)">
+                    </app-task>
+                    <h1>In Progress</h1>
+
+                </ion-reorder-group>
+            </ion-list>
+        </ion-slide>
+        <ion-slide>
+
+
+            <ion-list>
+                <ion-button (click)="clearDel()" color="danger">
+                    <ion-icon name="trash-outline"></ion-icon>Clear
+                </ion-button>
+                <ion-list-header>
+
+                    <h1>Done</h1>
+
+                </ion-list-header>
+                <ion-item *ngFor="let task1 of todoDel ">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                    <ion-label class="ion-text-wrap">
+                        <h3>{{task1.title}}</h3>
+                        <p>{{task1.description}}</p>
+                    </ion-label>
+
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+    </ion-slides>
 </ion-content>

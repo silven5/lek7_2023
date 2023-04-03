@@ -1,0 +1,41 @@
+$shape-size: 100px;
+$distance: 3px;
+$blur: 5px;
+$intensity: 50%;
+$bg-color: #ffffff;
+
+/**
+ * $distance (pixels) - The shadow distance
+ * $blur (pixels) - The shadow blur
+ * $intensity (percentage) - The shadow color intansity
+ * $inset (boolean) - Whether the shadow is inner or outer
+ */
+
+@mixin neumorphism($distance, $blur, $intensity, $inset: false) {
+    box-shadow: $distance $distance $blur mix(#5a5a5a, transparent, $intensity) if($inset, inset, null),
+    -#{$distance} -#{$distance} $blur mix(#ffffff, transparent, $intensity) if($inset, inset, null);
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: $bg-color;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    grid-template-columns: $shape-size $shape-size $shape-size;
+    grid-auto-rows: $shape-size;
+    grid-gap: 50px;
+}
+
+div {
+    padding: 20px 20px 20px 20px;
+    width: 100%;
+    height: 100%;
+    background: $bg-color;
+    border-radius: $shape-size / 10;
+    @include neumorphism($distance, $blur, $intensity, true);
+}

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
+import { ChildExample2Component } from './../child-example2/child-example2.component';
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
 @NgModule({
@@ -15,6 +15,6 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
-  declarations: [Tab2Page]
+  declarations: [Tab2Page, ChildExample2Component]
 })
-export class Tab2PageModule {}
+export class Tab2PageModule { }

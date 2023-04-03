@@ -1,0 +1,36 @@
+<ion-card>
+
+    <ion-card-header>
+        <ion-card-title>
+
+            <ion-button (click)="editTask(task)">
+                <ion-icon name="create-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="delete(task)" color="danger">
+                <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+        </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <div *ngIf="!editFlag">
+            <h1>{{ task.title }}</h1> {{ task.description }}</div>
+
+        <div *ngIf="editFlag">
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating">Title</ion-label>
+                    <ion-input class="input" #TaskName [value]=" task.title "></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Description</ion-label>
+                    <ion-input #TaskDesc [value]="task.description"></ion-input>
+                </ion-item>
+            </ion-list>
+            <ion-button (click)="saveEdit(TaskName.value,TaskDesc.value)">
+                <ion-icon name="checkmark-outline"></ion-icon>
+            </ion-button>
+        </div>
+    </ion-card-content>
+
+    <ion-reorder></ion-reorder>
+</ion-card>

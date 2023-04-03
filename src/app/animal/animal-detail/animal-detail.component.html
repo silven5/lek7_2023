@@ -1,0 +1,28 @@
+<ion-card>
+    <ion-card-header>
+        <ion-card-title class="card">
+            <h2 >
+                Дані про тварин
+            </h2>
+        </ion-card-title>
+    </ion-card-header>
+    <ion-item>
+        <h3> Номер тварини: {{animal.id}}</h3>
+    </ion-item>
+    <ion-item>
+
+        <ion-label position="floating">Назва :</ion-label>
+        <ion-input [value]="animal.name" #InputName>
+        </ion-input>
+
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Тип :</ion-label>
+        <ion-input [value]="animal.type" #InputType></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Зовнішність :</ion-label>
+        <ion-input [value]="animal.portrait" #InputPort></ion-input>
+    </ion-item>
+    <ion-button (click)="update(InputName.value,InputType.value,InputPort.value)">Оновити</ion-button>
+</ion-card>

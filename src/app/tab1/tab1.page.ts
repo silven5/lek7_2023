@@ -6,7 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  //Приклад1
 
-  constructor() {}
+  cout = 1;
+  public string1 = <string>'Data from parent ...';
+  public sum: number = 0;
+  public don: number = 1;
+  //Метод для зміни даних в дочірньому компоненті
+  changeChild1Data() {
+    this.string1 += this.cout + ' ';
+    this.sum += this.cout;
+    this.don = this.don * this.cout;
+    this.cout++;
+  }
+  constructor() { }
 
 }
