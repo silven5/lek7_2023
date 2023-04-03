@@ -16,7 +16,11 @@ export class Tab2Page {
   receiveFromChild(event: any) {
     //!Потрібна валідація
     //!як мінмум перевірка на тип
-    this.string2 = event;
+    if (typeof event === 'string') {
+      console.log("string");
+      this.string2 = event;
+    }
+    else console.log("Not string");
   }
   childSum(event: any) {
     this.sum = event;

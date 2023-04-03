@@ -18,7 +18,7 @@ export class ChildExample2Component implements OnInit {
   //Подія відбувається коли спрацює метод
   sendToParent() {
     this.outToParent.emit('Child sent this message to parent ...' + this.count + ' ');
-
+    // this.outToParent.emit(this.count);
     this.count++;
 
   }
