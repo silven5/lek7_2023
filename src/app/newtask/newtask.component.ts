@@ -18,6 +18,7 @@ export class NewtaskComponent implements OnInit {
   task: Task = { title: "", description: "" };
   //закриваємо вікно та повертаємо task з веденими значеннями
   save(id: any, name: any, desc: any) {
+    // !Додати перевірку типів
     this.task.id = id;
     this.task.title = name;
     this.task.description = desc;

@@ -66,12 +66,14 @@ export class Tab3Page {
   }
   //Видалення задачі
   deleteTask(event: any) {
-    let task = event;
-    var tas = this.todo.indexOf(task);
-    //  this.todo.splice(tas,1);
-    this.fbService.deleteTask(task.id, this.bdTodo, true);
-    //Додати до списку видалених
-    this.fbService.createTask(task, false);
+    if (event as Task) {
+      let task = event;
+      var tas = this.todo.indexOf(task);
+      //  this.todo.splice(tas,1);
+      this.fbService.deleteTask(task.id, this.bdTodo, true);
+      //Додати до списку видалених
+      this.fbService.createTask(task, false);
+    }
   }
   //Drag & Drop
   onRenderItems(event: any) {

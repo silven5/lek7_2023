@@ -9,8 +9,9 @@ export class ChildExample1Component implements OnInit {
   @Input() public inFromParent!: string;
   @Input() public sum!: number;
   @Input() public mul!: number;
-  constructor() { }
+  @Input() public div!: number;
+  @Input() public sqr!: number;
+  constructor() {}
 
-  ngOnInit() { }
-
+  ngOnInit() {}
 }

@@ -1,28 +1,33 @@
 <ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-title>
-            <ion-icon name="file-tray-full-outline"></ion-icon> Приклад до лекції 7
-        </ion-title>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="file-tray-full-outline"></ion-icon> Приклад до лекції 7
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-content [fullscreen]="true">
-        <ion-card>
-            <ion-card-header>
-                <h1>Декоратор @Output and EventEmitter</h1>
-
-            </ion-card-header>
-            <ion-button expand="block" fill="outline" (click)="changeChild1Data()"> Go
-            </ion-button>
-            <ion-card-content>
-                <h2>This is parent component:</h2>
-                <hr>
-                <strong>{{string2}}</strong>
-               
-                <app-child-example2 (outToParent)='receiveFromChild($event)'    [inFromParent]='string1'>
-                </app-child-example2>
-
-            </ion-card-content>
-        </ion-card>
-    </ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-card>
+      <ion-card-header>
+        <h1>Декоратор Output and EventEmitter</h1>
+      </ion-card-header>
+      <ion-button expand="block" fill="outline" (click)="changeChild1Data()">
+        Go
+      </ion-button>
+      <ion-card-content>
+        <h2>This is parent component:</h2>
+        <hr />
+        <ion-item><strong>{{string2}}</strong></ion-item>
+        <ion-item>sum=<strong>{{sum}}</strong></ion-item>
+        <ion-item>sqr=<strong>{{sqr}}</strong></ion-item>
+        <app-child-example2
+          (outToParent)="receiveFromChild($event)"
+          (outToParentSum)="childSum($event)"
+          (outToParentSqr)="childSqr($event)"
+          [inFromParent]="string1"
+        >
+        </app-child-example2>
+      </ion-card-content>
+    </ion-card> </ion-content
+></ion-content>

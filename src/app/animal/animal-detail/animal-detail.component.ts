@@ -18,10 +18,12 @@ export class AnimalDetailComponent implements OnInit {
   update(name: any, type: any, portait: any) {
     let anim = new Animal();
     anim.id = this.animal.id;
-    anim.name = name;
-    anim.portrait = portait;
-    anim.type = type;
-    this.animal = anim;
+    if ((typeof name === 'string') && (typeof type === 'string') && (typeof portait === 'string')) {
+      anim.name = name;
+      anim.portrait = portait;
+      anim.type = type;
+      this.animal = anim;
+    }
     this.animalChange.emit(this.animal);
     console.log(this.animal);
   }

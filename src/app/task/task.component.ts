@@ -24,14 +24,16 @@ export class TaskComponent implements OnInit {
     this.editFlag = true;
   }
   saveEdit(title: any, desc: any) {
-     this.task.title = title;
-    this.task.description = desc;
-    this.editFlag = false;
-    console.log(this.task);
-    //З'явилося при підключені БД
-    let id: any = this.task;
-    this.fb.updateTask(this.task, this.bdTodo);
-    this.edit.emit(this.task)
+    if ((typeof title === 'string') && (typeof desc === 'string')) {
+      this.task.title = title;
+      this.task.description = desc;
+      this.editFlag = false;
+      console.log(this.task);
+      //З'явилося при підключені БД
+      let id: any = this.task;
+      this.fb.updateTask(this.task, this.bdTodo);
+      this.edit.emit(this.task)
+    }
   }
   delete(task: any) {
     console.log("delete");
